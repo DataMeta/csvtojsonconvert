@@ -4,15 +4,13 @@ let csv = require("csvtojson"),
 
 const args = process.argv.slice(2);
 
-sourceFileName = args[0]
-destinationFileName = args[1]
+sourceFileName = args[0];
+destinationFileName = args[1];
 
-const srcfilepath = path.join(__dirname, sourceFileName = 'customer-data.csv')
-const destfilepath = path.join(__dirname, destinationFileName = 'customer-data.json')
+const srcfilepath = path.join(__dirname, sourceFileName);
+const destfilepath = path.join(__dirname, destinationFileName);
 
-const readStream = fs.createReadStream(srcfilepath)
-const writeStream = fs.createWriteStream(destfilepath)
+const readStream = fs.createReadStream(srcfilepath);
+const writeStream = fs.createWriteStream(destfilepath);
 
-readStream.pipe(csv()).pipe(writeStream);
-
-
+readStream.pipe(csv()).pipe(writeStream)
